@@ -1,0 +1,134 @@
+.attribution { font-size: 11px; text-align: center; }
+.attribution a { color: hsl(228, 45%, 44%); }
+
+:root {
+    --primaryBlue: hsl(237, 18%, 59%);
+    --primaryRed: hsl(345, 95%, 68%);
+    --secondaryWhite: hsl(0, 0%, 100%);
+    --secondaryBlue: hsl(236, 21%, 26%);
+    --darkBlue: hsl(235, 16%, 14%);
+    --blackBlue: hsl(234, 17%, 12%);
+    --fontSize: 14px;
+    --fontFamily: 'Red Hat Text', sans-serif;
+}
+
+body {
+    width: 99%;
+    height: 98vh;
+    background-color: var(--darkBlue);
+    background-image: url(images/bg-stars.svg);
+    font-family: var(--fontFamily);
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.pattern-hills {
+    width: 100%;
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+}
+
+.social {
+    position: absolute;
+    bottom: 50px;
+    left: calc(49.5% - 75px);
+    width: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 2;
+}
+
+.social svg {
+    cursor: pointer;
+}
+
+.social svg path {
+    transition: fill 300ms;
+}
+
+.social svg:hover path {
+    fill: var(--primaryRed);
+}
+
+.title {
+    color: white;
+    font-size: 1.15rem;
+    letter-spacing: 8px;
+    margin-top: 150px;
+}
+
+.countdown {
+    width: 850px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 75px;
+}
+
+
+.card {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 155px;
+    position: relative;
+}
+
+.top-card, .bottom-card {
+    background-color: var(--secondaryBlue);
+    width: 100%;
+    height: 70px;
+    border-radius: 8px;
+}
+
+.bottom-card {
+    box-shadow: 0px 15px 10px rgb(30, 30, 30);
+}
+
+.top-card {
+    z-index: 3;
+    transform-origin: 50% 100%;
+    -webkit-transform-origin: 50% 100%;
+    background-color: hsl(235, 21%, 21%);
+    /*animation-name: turnBottom;*/
+    animation-duration: 1.5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+.third-card {
+    width: 100%;
+    height: 140px;
+    background-color: var(--secondaryBlue);
+    position: absolute;
+    border-radius: 8px;
+    display: none;
+}
+
+@keyframes turnBottom {
+    0% {
+        transform: rotateX(0deg) perspective(200px);
+    }
+
+    100% {
+        transform: rotateX(360deg) perspective(200px);
+    }
+}
+
+.number {
+    font-size: 4.5rem;
+    color: var(--primaryRed);
+    position: absolute;
+    margin-top: 20px;
+    z-index: 4;
+}
+
+.card-title {
+    color: var(--primaryBlue);
+    font-size: var(--fontSize);
+    letter-spacing: 6px;
+    margin-top: 25px;
+}
